@@ -13,6 +13,11 @@ $redis = new Predis\Client([
     'port'   => $_ENV['REDIS_PORT'],
 ]);
 
-// Ключ блокировки
 $lockKey = $_ENV['LOCK_KEY'];
 $lockDuration = $_ENV['LOCK_DURATION'];
+
+return [
+    'redis' => $redis,
+    'lockKey' => $lockKey,
+    'lockDuration' => $lockDuration,
+];
